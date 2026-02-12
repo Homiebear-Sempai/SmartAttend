@@ -1,15 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import App from "./pages/home/Home";
 import "./index.css";
 
-ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-).render(
+import Home from "./pages/home/Home";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Attendance from "./pages/attendance/Attendance";
+
+function App() {
+  const path = window.location.pathname;
+
+  if (path === "/dashboard") return <Dashboard />;
+  if (path === "/attendance") return <Attendance />;
+
+  return <Home />;
+}
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <App />
   </React.StrictMode>
 );
+
