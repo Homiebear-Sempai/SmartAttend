@@ -11,13 +11,8 @@ function App() {
 
   if (path === "/dashboard") return <Dashboard />;
   if (path === "/attendance") return <Attendance />;
+  if (path === "/portal") return <Portal />;
 
+  // DEFAULT PAGE
   return <Home />;
 }
-
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
